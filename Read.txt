@@ -1,0 +1,17 @@
+To work with Azure in Terraform, you need to use the azurerm provider. 
+This allows Terraform to create and manage Azure resources like virtual machines, storage accounts, and networks.
+
+Install Azure CLI:curl -sL https://aka.ms/InstallAzureCLIDeb
+Login to Azure using CLI: az Login
+Set the Subscription: az account set --subscription "YOUR_SUBSCRIPTION_ID"
+get the subscription ID using: az account list --output table
+
+
+Initialize Terraform (installs the azurerm provider):terraform init 
+Validate the configuration:terraform validate
+Apply the configuration (creates the resource group in Azure): terraform apply -auto-approve
+
+
+Verify the resource in Azure: az group show --name myResourceGroup
+
+terraform destroy -auto-approve
